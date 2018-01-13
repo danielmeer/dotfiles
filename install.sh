@@ -16,9 +16,11 @@ echo "done"
 echo "Moving dotfiles to $OLD_DIR"
 mv ~/.bashrc       $OLD_DIR/
 mv ~/.bash_profile $OLD_DIR/
+mv ~/.tmux.conf    $OLD_DIR/
 mv ~/.zshrc        $OLD_DIR/
 
 echo "Creating symlinks"
 ln -s $DOT_DIR/bash/bashrc       ~/.bashrc
 ln -s $DOT_DIR/bash/bash_profile ~/.bash_profile
+ln -s $DOT_DIR/tmux/tmux.conf    ~/.tmux.conf
 ln -s $DOT_DIR/zsh/zshrc         ~/.zshrc
