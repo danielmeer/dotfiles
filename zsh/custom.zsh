@@ -16,6 +16,36 @@ export VISUAL='nvim'
 alias ls='ls --color=auto --group-directories-first'
 alias vim='nvim'
 
+alias gd='TMPDIR=tmp git difftool'
+alias gitmerge='TMPDIR=tmp git mergetool'
+alias gdm='TMPDIR=tmp git difftool --tool=matlab'
+alias gitmergem='TMPDIR=tmp git mergetool --tool=matlab'
+alias gdbc='TMPDIR=tmp git difftool --tool=bc'
+alias clearoxygen='\
+    git checkout thirdpartydrivers/sg_help/*; \
+    git checkout user_docs/generated_pdfs/*; \
+    find user_docs/oxygen -name "target.db" -exec git checkout {} +;\
+    git clean -fq thirdpartydrivers/sg_help'
+
+alias slxdiff='/mnt/c/Users/daniel.meer/OneDrive\ -\ Speedgoat\ GmbH/Files/scripts/slx-diff.sh'
+alias gdslx='TMPDIR=tmp git difftool --tool=slx'
+
+alias gs='git status'
+
+alias clean='/mnt/c/Users/daniel.meer/OneDrive\ -\ Speedgoat\ GmbH/Files/scripts/cleanup-whitespace.sh'
+gclean() {
+    clean $(git diff-tree --diff-filter=d --no-commit-id --name-only -r $1)
+}
+# git() {
+#    if [[ "$(pwd -P)/" =~ ^/mnt/./ ]]; then
+#        exec git.exe "$@"
+#    else
+#        exec /usr/bin/git "$@"
+#    fi
+#}
+
+alias wrike-time='python3 /mnt/c/Users/daniel.meer/OneDrive\ -\ Speedgoat\ GmbH/Files/scripts/wrike-time.py'
+
 
 # Paths for TeX Live
 if [ -d "${HOME}/opt/texlive/2016" ]; then
