@@ -60,6 +60,6 @@ if [ -d "${HOME}/.cargo" ]; then
 fi
 
 # Automatically start a tmux session
-if which tmux 2>&1 > /dev/null; then
-	test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
+#if which tmux 2>&1 > /dev/null; then
+#	test -z "$TMUX" && (tmux attach || tmux new-session)
+#fi
